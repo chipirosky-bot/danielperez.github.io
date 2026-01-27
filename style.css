@@ -1,0 +1,162 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=1263') 4 4, auto;
+}
+
+
+
+/* Tipografía y colores */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: black;
+  color: #fefeff;
+  line-height: 1.6;
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=1263') 4 4, auto;
+}
+
+a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.subtitle {
+      margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #C7C7C7;
+}
+
+.eth-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Secciones */
+section {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Jobs */
+.job {
+  margin-bottom: 30px;
+}
+
+.job h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.date {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.tech {
+  font-size: 0.9rem;
+  color: #333;
+  font-style: italic;
+}
+
+/* Projects */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Columnas */
+.grid-container {
+  display: grid;                   /* Activamos grid */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 0px;                       /* Espacio entre columnas */
+  margin: 0;
+}
+
+.grid-col {
+  /* background-color: #d0e0ff; */
+  padding: 20px;
+  text-align: center;
+}
+
+
+.head-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1920px;
+    gap: 20px;
+    width: 100%;
+    align-items: start;
+    padding-inline-end: 0px;
+    justify-content: start;
+    width: max-content;
+}
+
+.head-box-logo{
+    grid-column: span 1 / span 1;
+}
+
+.head-box-content{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    grid-column: span 3 / span 3;
+    justify-self: start;
+    flex-direction: column;  /* Apilar hijos verticalmente */
+    text-align: left;
+}
+
+.letra-grande{
+    font-size: 22px;
+}
+
+.letra-mediana{
+    font-size: 14px;
+}
+
+.logo {
+  width: 80px;              /* Tamaño del logo */
+  height: 80px;
+  border-radius: 50%;       /* Lo hace circular */
+  object-fit: cover;        /* Para que la imagen se recorte si es necesario */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;  /* Apila las columnas en móvil */
+  }
+}
+
