@@ -3,22 +3,25 @@ var logo = document.querySelector(".logo");
 var click = true
 
 document.addEventListener("DOMContentLoaded", () => {
-  logo = document.querySelector(".logo");
+    logo = document.querySelector(".logo");
 
-  if (!logo) return; // seguridad extra
+    if (!logo) return; // seguridad extra
 
-//   if (window.matchMedia("(hover: none)").matches) {
-  logo.addEventListener("click", () => {
-      activeLogo()
-  });
+    const isTouchDevice = window.matchMedia("(hover: none)").matches;
 
-  logo.addEventListener("mouseenter", () => {
-      activeLogo()
-  });
-  logo.addEventListener("mouseout", () => {
-      activeLogo()
-  });
-  //}
+    if (isTouchDevice) {
+        logo.addEventListener("click", () => {
+            activeLogo()
+        });
+    } else {
+        logo.addEventListener("mouseenter", () => {
+            activeLogo()
+        });
+        logo.addEventListener("mouseout", () => {
+            activeLogo()
+        });
+    }
+    
 });
 
 
