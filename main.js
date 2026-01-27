@@ -1,15 +1,19 @@
 var logo = document.querySelector(".logo");
 var noise = document.querySelector(".noise");
 var head_box_content = document.querySelector(".head-box-content");
+// var section_box = document.querySelector("#section-box");
+
 var click = true
 
 document.addEventListener("DOMContentLoaded", () => {
     logo = document.querySelector(".logo");
     noise = document.querySelector(".noise");
     head_box_content = document.querySelector(".head-box-content");
+    // section_box = document.querySelector("#section-box");
     if (!logo) return; // seguridad extra
     if (!noise) return;
     if (!head_box_content) return;
+    // if (!section_box) return;
 
     const isTouchDevice = window.matchMedia("(hover: none)").matches;
 
@@ -41,12 +45,15 @@ function activeLogo() {
         logo.classList.toggle("devolver");
         noise.classList.remove("oculto");
         head_box_content.classList.toggle("glitch");
+        // section_box.classList.toggle("glitch");
+
         click = false;
     }
     else{
         logo.classList.remove("devolver");
         noise.classList.toggle("oculto");
         head_box_content.classList.remove("glitch");
+        // section_box.classList.remove("glitch");
         click = true;
     }
 }
