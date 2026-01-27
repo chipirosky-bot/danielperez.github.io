@@ -154,6 +154,16 @@ ul li {
   object-fit: cover;        /* Para que la imagen se recorte si es necesario */
 }
 
+.logo:hover {
+  background: url('Sin_cara.png');
+  max-width: 100%;
+  background-size: 200%;    
+}
+
+.logo-img:hover {
+  content : url('maile3.gif');
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;  /* Apila las columnas en móvil */
