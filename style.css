@@ -130,8 +130,8 @@ ul li {
   /* grid-template-columns: repeat(3, 1fr); 3 columnas iguales */
   gap: 0px;                       /* Espacio entre columnas */
   margin: 0;
-  margin-left: 30vw;
-  margin-right: 30vw;
+  margin-left: 25vw;
+  margin-right: 25vw;
 }
 
 
