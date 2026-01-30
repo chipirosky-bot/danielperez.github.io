@@ -223,7 +223,7 @@ ul li {
 .section-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 0px;
     width: 100%;
     align-items: start;
     padding-inline-end: 0px;
