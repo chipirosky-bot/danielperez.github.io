@@ -178,6 +178,10 @@ ul li {
     font-size: 14px;
 }
 
+.gris{
+    color: #808080;
+}
+
 .logo {
   position: relative;
   width: 80px;              /* Tamaño del logo */
@@ -255,6 +259,10 @@ ul li {
     flex-direction: column;  /* Apila las columnas en móvil */
     margin-left: 5vw;
     margin-right: 5vw;
+  }
+
+  .section-box {
+    display: block;
   }
   /* .logo.active {
     background: url("Sin_cara.png");
