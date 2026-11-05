@@ -1,0 +1,209 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+/* Tipografía y colores base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #000;
+  color: #fefeff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #d1d5db;
+}
+
+/* Encabezados y textos */
+h1 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-size: 14px;
+  color: #c7c7c7;
+  line-height: 1.6;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #e5e5e5;
+}
+
+.gris {
+  color: #888888;
+}
+
+/* Contenedor principal responsive */
+.grid-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
+}
+
+.grid-col {
+  width: 100%;
+}
+
+/* Cabecera / Perfil */
+.head-box {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.head-box-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.head-box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+/* Avatar interactivo */
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease, filter 0.25s ease;
+  user-select: none;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Easter egg: swap a gif animado */
+.logo.devolver {
+  content: url('Assets/maile3.gif');
+  border-color: rgba(255, 0, 80, 0.5);
+  filter: drop-shadow(0 0 8px rgba(255, 0, 80, 0.4));
+}
+
+/* Efecto Ruido / Grain animado */
+.noise {
+  position: fixed;
+  inset: -100%;
+  width: 300%;
+  height: 300%;
+  background-image: url("Assets/grain.png");
+  background-repeat: repeat;
+  opacity: 0.22;
+  pointer-events: none;
+  animation: noiseMove 0.25s steps(3) infinite;
+  will-change: transform;
+  z-index: 10;
+}
+
+@keyframes noiseMove {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, -2%); }
+  40% { transform: translate(2%, 3%); }
+  60% { transform: translate(-2%, 1%); }
+  80% { transform: translate(3%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+.oculto {
+  display: none;
+}
+
+/* Efecto glitch original (estático, sin movimiento) */
+.glitch {
+  font-size: 8rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0.15em 0.05em 0 rgba(255, 0, 0, 0.75),
+              -0.025em -0.0em 0 rgba(0, 255, 0, 0.75),
+               0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+}
+
+/* Secciones y espaciados */
+.margen-bajo {
+  margin-bottom: 36px;
+}
+
+.margen-bajo2 {
+  margin-bottom: 6px;
+}
+
+/* Sin tabulación: todo en un único flujo vertical alineado a la izquierda */
+.section-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.section-box .head-box-logo {
+  margin-bottom: 4px;
+}
+
+.section-box-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 640px) {
+  .grid-container {
+    padding: 36px 18px 60px;
+  }
+
+  .head-box {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-box {
+    margin-bottom: 24px;
+  }
+}
