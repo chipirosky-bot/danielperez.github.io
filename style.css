@@ -3,272 +3,207 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=1263') 4 4, auto;
 }
 
 html {
   margin: 0;
   padding: 0;
+  background-color: #000;
+}
+
+/* Tipografía y colores base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #000;
+  color: #fefeff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .main {
   min-height: 100vh;
-  overflow-y: auto; /* solo aparece si hace falta */
-  overflow-x: hidden;
   position: relative;
-  overflow: hidden;
-}
-
-
-/* Tipografía y colores */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: black;
-  color: #fefeff;
-  line-height: 1.6;
-  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=1263') 4 4, auto;
+  overflow-x: hidden;
 }
 
 a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  cursor:pointer;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #d1d5db;
 }
 
-/* Header */
-header {
-  margin-bottom: 100px;
-}
-
+/* Encabezados y textos */
 h1 {
-  margin: 0;
-  padding: 0;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
 }
 
 h2 {
-  margin: 0;
-  padding: 0;
   font-size: 16px;
-  font-weight: 400;
-  color: white;
-
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.01em;
 }
 
 p {
-    font-size: 14px;
-    color: #C7C7C7;
-    margin: 0;
-    padding: 0;
+  font-size: 14px;
+  color: #c7c7c7;
+  line-height: 1.6;
 }
 
 .subtitle {
-  margin: 0;
-  padding: 0;
   font-size: 14px;
-  color: white;
+  color: #e5e5e5;
 }
 
-.eth-link {
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: 500;
+.gris {
+  color: #888888;
 }
 
-/* Secciones */
-
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-}
-
-/* Jobs */
-.job {
-  margin-bottom: 30px;
-}
-
-.job h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.date {
-  display: block;
-  font-size: 0.9rem;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.tech {
-  font-size: 0.9rem;
-  color: #333;
-  font-style: italic;
-}
-
-/* Projects */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-/* Columnas */
+/* Contenedor principal responsive */
 .grid-container {
-  display: grid;                   /* Activamos grid */
-  /* grid-template-columns: repeat(3, 1fr); 3 columnas iguales */
-  gap: 0px;                       /* Espacio entre columnas */
-  margin: 0;
-  margin-left: 30vw;
-  margin-right: 30vw;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 24px 100px;
 }
-
-
 
 .grid-col {
-  /* background-color: #d0e0ff; */
-  padding: 15px;
+  width: 100%;
 }
 
-
+/* Cabecera / Perfil */
 .head-box {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1920px;
-    gap: 20px;
-    width: 100%;
-    align-items: start;
-    padding-inline-end: 0px;
-    justify-content: start;
-    /* width: max-content; */
-    margin-bottom: 10%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-.head-box-logo{
-    grid-column: span 1 / span 1;
+.head-box-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.head-box-content{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    grid-column: span 2 / span 2;
-    justify-self: start;
-    flex-direction: column;  /* Apilar hijos verticalmente */
-    text-align: left;
+.head-box-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
 }
 
-
-.letra-grande{
-    font-size: 22px;
-}
-
-.letra-mediana{
-    font-size: 14px;
-}
-
-.gris{
-    color: #808080;
-}
-
+/* Avatar interactivo */
 .logo {
-  position: relative;
-  width: 80px;              /* Tamaño del logo */
+  width: 80px;
   height: 80px;
-  border-radius: 50%;       /* Lo hace circular */
-  object-fit: cover;        /* Para que la imagen se recorte si es necesario */
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.25s ease, filter 0.25s ease;
+  user-select: none;
 }
 
-.devolver {
-  background: url('Assets/Sin_cara.png');
-  max-width: 100%;
-  background-size: 200%;    
-  content : url('Assets/maile3.gif');
+.logo:hover {
+  transform: scale(1.05);
 }
 
+/* Easter egg: swap a gif animado */
+.logo.devolver {
+  content: url('Assets/maile3.gif');
+  border-color: rgba(255, 0, 80, 0.5);
+  filter: drop-shadow(0 0 8px rgba(255, 0, 80, 0.4));
+}
+
+/* Efecto Ruido / Grain animado */
 .noise {
-  position: absolute;
-  inset: -200%;
+  position: fixed;
+  inset: -100%;
+  width: 300%;
+  height: 300%;
   background-image: url("Assets/grain.png");
   background-repeat: repeat;
-  opacity: 0.25;
-  animation: noiseMove 8s linear infinite;
+  opacity: 0.22;
+  pointer-events: none;
+  animation: noiseMove 0.25s steps(3) infinite;
   will-change: transform;
-  z-index: -1;
+  z-index: 10;
+}
+
+@keyframes noiseMove {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, -2%); }
+  40% { transform: translate(2%, 3%); }
+  60% { transform: translate(-2%, 1%); }
+  80% { transform: translate(3%, -1%); }
+  100% { transform: translate(0, 0); }
 }
 
 .oculto {
-    visibility: hidden;
+  display: none;
 }
 
-.margen-bajo {
-    margin-bottom: 10%;
-}
-
-.margen-bajo2 {
-    margin-bottom: 5px;
-}
-
-.section-box {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    width: 100%;
-    align-items: start;
-    padding-inline-end: 0px;
-    justify-content: start;
-    margin-bottom: 10%;
-}
-
-
-.section-box-content{
-    display: flex;
-    padding: 0;
-    margin-bottom: 0;
-    grid-column: span 3 / span 3;
-    justify-self: start;
-    flex-direction: column;  /* Apilar hijos verticalmente */
-    text-align: left;
-}
-
+/* Efecto glitch original (estático, sin movimiento) */
 .glitch {
   font-size: 8rem;
   font-weight: 700;
-  /* text-transform: uppercase; */
   position: relative;
- overflow: hidden;
- 
+  overflow: hidden;
   text-shadow: 0.15em 0.05em 0 rgba(255, 0, 0, 0.75),
-    -0.025em -0.0em 0 rgba(0, 255, 0, 0.75),
-    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+              -0.025em -0.0em 0 rgba(0, 255, 0, 0.75),
+               0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
 }
 
-@media (max-width: 768px) {
+/* Secciones y espaciados */
+.margen-bajo {
+  margin-bottom: 36px;
+}
+
+.margen-bajo2 {
+  margin-bottom: 6px;
+}
+
+/* Sin tabulación: todo en un único flujo vertical alineado a la izquierda */
+.section-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.section-box .head-box-logo {
+  margin-bottom: 4px;
+}
+
+.section-box-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 640px) {
   .grid-container {
-    flex-direction: column;  /* Apila las columnas en móvil */
-    margin-left: 5vw;
-    margin-right: 5vw;
+    padding: 36px 18px 60px;
+  }
+
+  .head-box {
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
   .section-box {
-    display: block;
+    margin-bottom: 24px;
   }
-  /* .logo.active {
-    background: url("Sin_cara.png");
-    background-size: 200%;
-    content: url("maile3.gif");
-    } */
 }
-
