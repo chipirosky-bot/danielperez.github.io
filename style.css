@@ -103,6 +103,11 @@ p {
 }
 
 
+.lang-toggle:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 .lang-toggle:active {
   transform: scale(0.96);
 }
