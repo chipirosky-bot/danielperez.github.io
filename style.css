@@ -81,6 +81,44 @@ p {
   width: 100%;
 }
 
+/* Selector de idioma: solo la bandera */
+.lang-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.75;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+
+.lang-toggle:active {
+  transform: scale(0.96);
+}
+
+.lang-flag-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-flag-icon {
+  width: 22px;
+  height: 15px;
+  display: block;
+}
+
 /* Cabecera / Perfil */
 .head-box {
   display: grid;
@@ -192,10 +230,185 @@ p {
   text-align: left;
 }
 
+/* Previews Flotantes con Líneas Conectoras Rectas */
+.section-box.has-preview {
+  position: relative;
+}
+
+.project-preview {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 20;
+}
+
+.preview-left {
+  right: calc(100% + 4px);
+  transform: translateY(-50%) translateX(12px);
+}
+
+.preview-right {
+  left: calc(100% + 4px);
+  transform: translateY(-50%) translateX(-12px);
+}
+
+.section-box.has-preview:hover .preview-left {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.section-box.has-preview:hover .preview-right {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Línea conectora recta que atraviesa la foto (efecto blueprint/acotación) */
+.preview-line {
+  height: 1px;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.85);
+}
+
+.preview-left .preview-line {
+  width: 54px;
+  margin-left: -22px; /* Atraviesa 22px por encima de la tarjeta izquierda */
+}
+
+.preview-right .preview-line {
+  width: 54px;
+  margin-right: -22px; /* Atraviesa 22px por encima de la tarjeta derecha */
+}
+
+/* Tarjeta base contenedora de la imagen */
+.preview-card {
+  width: 160px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #121212;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.preview-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+}
+
+/* My own gestory: proporción más contenida para capturas verticales */
+.gestory-project .preview-card {
+  width: 115px;
+}
+
+/* Desalineación orgánica en My own gestory */
+.has-preview.gestory-project:hover .preview-left .preview-card {
+  transform: translateY(-10px);
+}
+
+.has-preview.gestory-project:hover .preview-right .preview-card {
+  transform: translateY(14px);
+}
+
+/* Estructura asimétrica / orgánica para Artist Portfolio */
+.artist-left .card-desktop {
+  width: 235px; /* Más amplio para apreciar detalles panorámicos */
+  transform: translateY(-16px);
+}
+
+.has-preview.artist-project:hover .artist-left .card-desktop {
+  transform: translateY(-22px);
+}
+
+.preview-cluster {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.artist-right .card-desktop-alt {
+  width: 230px; /* Más amplio para apreciar detalles panorámicos */
+  transform: translateY(-12px);
+}
+
+/* Captura móvil superpuesta pero desfasada del borde derecho */
+.artist-right .card-mobile {
+  width: 100px;
+  margin-top: -38px;
+  margin-left: 145px; /* Desfasada: sobresale por la derecha sin compartir alineación */
+  z-index: 6;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(8px);
+}
+
+.has-preview.artist-project:hover .artist-right .card-desktop-alt {
+  transform: translateY(-16px);
+}
+
+.has-preview.artist-project:hover .artist-right .card-mobile {
+  transform: translateY(14px);
+}
+
+/* Estructura asimétrica / orgánica para My own library */
+.library-left .card-desktop {
+  width: 235px;
+  transform: translateY(-14px);
+}
+
+.has-preview.library-project:hover .library-left .card-desktop {
+  transform: translateY(-20px);
+}
+
+.library-right .card-desktop-alt {
+  width: 230px;
+  transform: translateY(-10px);
+}
+
+.library-right .card-mobile {
+  width: 98px;
+  margin-top: -36px;
+  margin-left: 140px;
+  z-index: 6;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(8px);
+}
+
+.has-preview.library-project:hover .library-right .card-desktop-alt {
+  transform: translateY(-15px);
+}
+
+.has-preview.library-project:hover .library-right .card-mobile {
+  transform: translateY(14px);
+}
+
+/* Solo ocultar en dispositivos móviles estrechos */
+@media (max-width: 768px) {
+  .project-preview {
+    display: none !important;
+  }
+}
+
 /* Adaptación a dispositivos móviles */
 @media (max-width: 640px) {
   .grid-container {
     padding: 36px 18px 60px;
+  }
+
+  .lang-bar {
+    margin-bottom: 20px;
   }
 
   .head-box {

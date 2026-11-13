@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Perez — IT-Teacher & Developer</title>
+  <title>Daniel Perez — Profesor de informática & Desarrollador</title>
   <meta name="description" content="Portfolio personal de Daniel Perez: Profesor de informática y desarrollador.">
   
   <!-- Open Graph / Redes Sociales -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Daniel Perez — IT-Teacher & Developer">
+  <meta property="og:title" content="Daniel Perez — Profesor de informática & Desarrollador">
   <meta property="og:description" content="Portfolio personal de Daniel Perez: Profesor de informática y desarrollador.">
   <meta property="og:url" content="https://danielperez.lol">
 
@@ -24,30 +24,37 @@
     <div class="grid-container">
         <!-- <div class="grid-col"></div> -->
         <div class="grid-col">
+            <div class="lang-bar">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma a inglés">
+                    <span class="lang-flag-wrapper">
+                        <svg class="lang-flag-icon" viewBox="0 0 60 30" width="22" height="15" aria-hidden="true"><clipPath id="uk-clip"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="uk-diag"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#uk-clip)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#uk-diag)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>
+                    </span>
+                </button>
+            </div>
             <div class="head-box">
                 <div class="head-box-logo">
                     <img src="Assets/marceline.jpg" alt="Logo" class="logo">
                 </div>
                 <div class="head-box-content">
                     <h1>Daniel Perez</h1>
-                    <p class="subtitle">IT-Teacher and developer</p>
+                    <p class="subtitle" data-i18n="role">Profesor de informática y desarrollador</p>
                     <a href="https://danielperez.lol" target="_blank" rel="noopener noreferrer" class="subtitle">danielperez.lol</a>
                 </div>
             </div>
             <div class="margen-bajo">
-                <h2>About</h2>
-                <p>I'm Daniel. :D</p>
+                <h2 data-i18n="aboutHeading">Sobre mí</h2>
+                <p data-i18n="aboutText">Soy Daniel. :D</p>
             </div>
             <div class="margen-bajo2">
-                <h2>Experience</h2>
+                <h2 data-i18n="expHeading">Experiencia</h2>
             </div>
             <div class="section-box">
                 <div class="head-box-logo">
-                    <p class="subtitle">2020 - present</p>
+                    <p class="subtitle" data-i18n="exp1Date">2020 - presente</p>
                 </div>
                 <div class="section-box-content">
-                    <p class="subtitle margen-bajo2">Superior Degree IT - Teacher</p>
-                    <p class="margen-bajo2">Teaching and conveying the art of programming, covering foundational principles, object-oriented programming, concurrent systems, and visual interface development. Collaborating with companies across multiple countries to bridge real-world industry experience with student learning.</p>
+                    <p class="subtitle margen-bajo2" data-i18n="exp1Role">Profesor de Grado Superior de Informática</p>
+                    <p class="margen-bajo2" data-i18n="exp1Desc">Enseñando y transmitiendo el arte de la programación: fundamentos, programación orientada a objetos, sistemas concurrentes y desarrollo de interfaces visuales. Colaborando con empresas de varios países para conectar la experiencia real del sector con el aprendizaje de los alumnos.</p>
                     <p class="margen-bajo2 gris">Java - Python - Linux</p>
                 </div>
             </div>
@@ -56,36 +63,73 @@
                     <p class="subtitle">2017 - 2020</p>
                 </div>
                 <div class="section-box-content">
-                    <p class="subtitle margen-bajo2">CRM Developer Engineer - Accenture</p>
-                    <p class="margen-bajo2">Building scalable business solutions. Customizing workflows, integrations, and user experiences to optimize business processes.</p>
+                    <p class="subtitle margen-bajo2" data-i18n="exp2Role">Ingeniero Desarrollador CRM - Accenture</p>
+                    <p class="margen-bajo2" data-i18n="exp2Desc">Creación de soluciones empresariales escalables. Personalización de flujos de trabajo, integraciones y experiencias de usuario para optimizar procesos de negocio.</p>
                     <p class="margen-bajo2 gris">CRM365 - C# - TypeScript</p>
                 </div>
             </div>
 
 
              <div class="margen-bajo2">
-                <h2>Projects</h2>
+                <h2 data-i18n="projectsHeading">Proyectos</h2>
             </div>
-            <div class="section-box">
+            <div class="section-box has-preview gestory-project">
+                <!-- Preview flotante izquierdo -->
+                <div class="project-preview preview-left">
+                    <div class="preview-card">
+                        <img src="Assets/gestory0.jpg" alt="Preview My own gestory 1">
+                    </div>
+                    <div class="preview-line"></div>
+                </div>
+
                 <div class="head-box-logo">
                     <p class="subtitle">2026</p>
                 </div>
                 <div class="section-box-content">
                     <a href="https://diablo-facturas.vercel.app/" target="_blank" rel="noopener noreferrer" class="subtitle margen-bajo2">My own gestory ⇲
                     </a>
-                    <p class="subtitle margen-bajo2">An iOS file manager-inspired web application designed to help freelancers and small business owners in Spain manage their finances. It streamlines tasks such as creating and storing invoices and expenses, as well as handling tax declarations.</p>
+                    <p class="subtitle margen-bajo2" data-i18n="gestoryDesc">Aplicación web inspirada en el gestor de archivos de iOS diseñada para ayudar a autónomos y pequeñas empresas en España a gestionar sus finanzas. Agiliza tareas como la creación y archivo de facturas y gastos, así como la gestión de declaraciones de impuestos.</p>
                     <p class="subtitle margen-bajo2 gris">Flutter - Dart - Vercel</p>
                 </div>
+
+                <!-- Preview flotante derecho -->
+                <div class="project-preview preview-right">
+                    <div class="preview-line"></div>
+                    <div class="preview-card">
+                        <img src="Assets/gestory1.jpg" alt="Preview My own gestory 2">
+                    </div>
+                </div>
             </div>
-            <div class="section-box">
+            <div class="section-box has-preview library-project">
+                <!-- Preview flotante izquierdo -->
+                <div class="project-preview preview-left library-left">
+                    <div class="preview-card card-desktop">
+                        <img src="Assets/library-0.png" alt="My own library desktop">
+                    </div>
+                    <div class="preview-line line-left"></div>
+                </div>
+
                 <div class="head-box-logo">
                     <p class="subtitle">2026</p>
                 </div>
                 <div class="section-box-content">
                     <a href="https://storage-github-io.onrender.com/" target="_blank" rel="noopener noreferrer" class="subtitle margen-bajo2">My own library ⇲
                     </a>
-                    <p class="margen-bajo2">Personal retro server for organizing notes and file storage, built as an experimental project combining nostalgic interfaces with modern web technologies.</p>
+                    <p class="margen-bajo2" data-i18n="libraryDesc">Servidor retro personal para organizar notas y almacenamiento de archivos, creado como proyecto experimental que combina interfaces nostálgicas con tecnologías web modernas.</p>
                     <p class="margen-bajo2 gris">React - Node - SQLite</p>
+                </div>
+
+                <!-- Preview flotante derecho (Cluster de 2 capturas) -->
+                <div class="project-preview preview-right library-right">
+                    <div class="preview-line line-right"></div>
+                    <div class="preview-cluster">
+                        <div class="preview-card card-desktop-alt">
+                            <img src="Assets/library-1.png" alt="My own library detail">
+                        </div>
+                        <div class="preview-card card-mobile">
+                            <img src="Assets/library-2.jpg" alt="My own library mobile">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="section-box">
@@ -93,29 +137,46 @@
                     <p class="subtitle">2025</p>
                 </div>
                 <div class="section-box-content">
-                    <p class="subtitle margen-bajo2">Subdiferential</p>
-                    <p class="margen-bajo2">Advanced Mathematics - UNED</p>
+                    <a href="Assets/subdiferencial.pdf" target="_blank" rel="noopener noreferrer" class="subtitle margen-bajo2">Subdiferencial ⇲
+                    </a>
+                    <p class="margen-bajo2" data-i18n="subdifDesc">Matemática Avanzada - UNED</p>
                     <p class="margen-bajo2 gris">LaTeX</p>
                 </div>
             </div>
-            <div class="section-box">
+            <div class="section-box has-preview artist-project">
+                <!-- Preview flotante izquierdo -->
+                <div class="project-preview preview-left artist-left">
+                    <div class="preview-card card-desktop">
+                        <img src="Assets/artist-portfolio-0.png" alt="Artist portfolio desktop">
+                    </div>
+                    <div class="preview-line line-left"></div>
+                </div>
+
                 <div class="head-box-logo">
                     <p class="subtitle">2022</p>
                 </div>
                 <div class="section-box-content">
                     <a href="https://chipirosky-bot.github.io/artistportfolio.github.io/index.html" target="_blank" rel="noopener noreferrer" class="subtitle margen-bajo2">Artist portfolio ⇲</a>
-                    <p class="margen-bajo2">Portfolio web designed for a visual artist, focusing on a minimalist interface and a strong visual identity.</p>
+                    <p class="margen-bajo2" data-i18n="artistDesc">Portfolio web diseñado para una artista visual, centrado en una interfaz minimalista y una identidad visual marcada.</p>
                     <p class="margen-bajo2 gris">HTML - CSS - JS</p>
+                </div>
+
+                <!-- Preview flotante derecho (Cluster de 2 capturas) -->
+                <div class="project-preview preview-right artist-right">
+                    <div class="preview-line line-right"></div>
+                    <div class="preview-cluster">
+                        <div class="preview-card card-desktop-alt">
+                            <img src="Assets/artist-portfolio-1.png" alt="Artist portfolio detail">
+                        </div>
+                        <div class="preview-card card-mobile">
+                            <img src="Assets/artist-portfolio-2.png" alt="Artist portfolio mobile">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- <div class="grid-col"></div> -->
     </div>
 </div>
-  
-
-
-
-  
 </body>
 </html>
